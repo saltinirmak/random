@@ -1,0 +1,1 @@
+print("Merhabalar efendim, nasılsınız?")
