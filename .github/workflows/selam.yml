@@ -3,7 +3,7 @@ name: Gunluk Selamlama
 on:
   schedule:
     # Her gün UTC ile 12:34'te (Türkiye saati ile 15:34) çalışır
-    - cron: '40 12 * * *'
+    - cron: '45 12 * * *'
   workflow_dispatch: # Test edebilmeniz için manuel tetikleme butonu ekler
 
 jobs:
