@@ -1,0 +1,28 @@
+name: Gunluk Selamlama
+
+on:
+  schedule:
+    # Her gün UTC ile 12:34'te (Türkiye saati ile 15:34) çalışır
+    - cron: '40 12 * * *'
+  workflow_dispatch: # Test edebilmeniz için manuel tetikleme butonu ekler
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Depoyu Klonla (Checkout)
+        uses: actions/checkout@v4
+
+      - name: Python Ortamını Kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11' # Kullanmak istediğiniz Python sürümü
+
+      - name: Python Kodunu Çalıştır
+        # Tek satırlık kodu doğrudan çalıştırıyoruz:
+        run: python -c "print('Merhabalar efendim, nasılsınız?')"
+        
+        # Eğer kodunuz 'main.py' gibi bir dosyanın içindeyse 
+        # üstteki 'run' satırını silip aşağıdaki gibi değiştirebilirsiniz:
+        # run: python main.py
